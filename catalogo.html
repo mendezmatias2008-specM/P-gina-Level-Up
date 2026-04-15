@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo | Level Up Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">LEVEL UP GAMES</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.php">Catálogo</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-header">
+        <h1>¡SUBE DE NIVEL TU INVENTARIO! 🚀</h1>
+        <p>Descubre las mejores ofertas en títulos AAA, indies y hardware de alto rendimiento. Precios competitivos, entrega inmediata y soporte local en Cuenca.</p>
+    </header>
+
+    <div class="container">
+        <div class="grid-productos">
+            <div class="card">
+                <img src="imagenes/Juegos (Modificado).png" alt="Juegos Switch">
+                <h3>Videojuegos de Nintendo Switch</h3>
+                <p>Juegos Incluidos en Paquete:<br>- Super Mario Odyssey<br>- Super Mario 3D All-Stars<br>- The Legend of Zelda - Breath of the Wild</p>
+                <div class="precio">$159.99</div>
+                <a href="#" class="btn-neon">COMPRAR</a>
+            </div>
+            
+            <div class="card">
+                <img src="imagenes/PS3 (Retocado).png" alt="Consola PS3">
+                <h3>Consola Play Station 3 (Con Juegos Incluidos)</h3>
+                <p>Consola Play Station 3 Chipeada con Juegos Incluidos (Instalado en Disco Duro 1TB).</p>
+                <div class="precio">$199.99</div>
+                <a href="#" class="btn-neon">COMPRAR</a>
+            </div>
+            
+            <div class="card">
+                <img src="imagenes/Nintendo Switch (Retocado).png" alt="Nintendo Switch">
+                <h3>Consola Nintendo Switch</h3>
+                <p>Consola Nintendo Switch (1er Modelo), incluye cargador, Micro SD.</p>
+                <div class="precio">$299.99</div>
+                <a href="#" class="btn-neon">COMPRAR</a>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 60px; margin-bottom: 20px;">INVENTARIO (DATABASE VIEW)</h2>
+        <div class="db-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID_PROD</th>
+                        <th>NOMBRE_ITEM</th>
+                        <th>CATEGORIA</th>
+                        <th>PRECIO</th>
+                        <th>STOCK</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LUG-001</td>
+                        <td>PACK JUEGOS SWITCH (MARIO/ZELDA)</td>
+                        <td>VIDEOJUEGOS FISICOS</td>
+                        <td>$159.99</td>
+                        <td>03 UNIDADES</td>
+                    </tr>
+                    <tr>
+                        <td>LUG-002</td>
+                        <td>CONSOLA PS3 (CHIPEADA 1TB)</td>
+                        <td>CONSOLAS</td>
+                        <td>$199.99</td>
+                        <td>02 UNIDADES</td>
+                    </tr>
+                    <tr>
+                        <td>LUG-003</td>
+                        <td>CONSOLA NINTENDO SWITCH (V1)</td>
+                        <td>CONSOLAS</td>
+                        <td>$299.99</td>
+                        <td>05 UNIDADES</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>Hecho por: Matias Méndez<br>
+        Curso: 3ro de Bachillerato "E2"<br>
+        Proyecto Individual</p>
+    </footer>
+
+</body>
+</html>

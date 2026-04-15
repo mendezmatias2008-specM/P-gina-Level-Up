@@ -1,0 +1,289 @@
+/* style.css - Minimalista con Animaciones y Profundidad */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f6f8; /* Un fondo gris ligerísimamente más oscuro para que las tarjetas blancas resalten (profundidad) */
+    color: #3c4043;
+    font-family: 'Press Start 2P', cursive; 
+    line-height: 1.8;
+    font-size: 10px;
+    overflow-x: hidden; /* Evita barras de desplazamiento horizontales en las animaciones */
+}
+
+/* =========================================
+   ANIMACIONES CLAVE (KEYFRAMES)
+   ========================================= */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(26, 115, 232, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
+}
+
+/* =========================================
+   NAVEGACIÓN Y HEADER
+   ========================================= */
+nav {
+    background-color: #ffffff;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra más pronunciada para despegarlo del fondo */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; 
+    text-decoration: none;
+    gap: 15px; 
+    max-width: 60%;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.logo-container:hover {
+    transform: scale(1.05); /* El logo crece un poquito al pasar el ratón */
+}
+
+.logo-img {
+    height: 45px;
+    max-height: 45px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.logo-text {
+    font-size: 12px;
+    color: #202124;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #5f6368;
+    text-decoration: none;
+    font-size: 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1a73e8;
+    background-color: rgba(26, 115, 232, 0.1); /* Resaltado de fondo sutil al pasar el mouse */
+}
+
+/* =========================================
+   ENCABEZADO (HERO)
+   ========================================= */
+.hero-header {
+    background: linear-gradient(135deg, #ffffff 0%, #e8f0fe 100%); /* Gradiente sutil en lugar de color plano */
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #dadce0;
+    animation: fadeInUp 0.8s ease-out forwards; /* Aparece animado al cargar */
+}
+
+.hero-header h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #1a73e8;
+}
+
+/* =========================================
+   CONTENEDORES Y TARJETAS (CARDS)
+   ========================================= */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dadce0;
+    padding: 20px;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra base para dar volumen */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote suave */
+    animation: fadeInUp 1s ease-out both; /* Animación de entrada */
+}
+
+/* Animación en cascada para las tarjetas */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.3s; }
+.card:nth-child(3) { animation-delay: 0.5s; }
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02); /* Se eleva y crece un 2% */
+    box-shadow: 0 15px 30px rgba(26, 115, 232, 0.2); /* Sombra azul para resaltar */
+    border-color: #1a73e8; /* Borde azul */
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05); /* La imagen del juego hace un pequeño zoom interior */
+}
+
+.precio {
+    color: #1a73e8;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+/* =========================================
+   BOTONES
+   ========================================= */
+.btn-neon {
+    display: block; /* Para que ocupe todo el ancho disponible si tiene padding */
+    padding: 15px;
+    background-color: #1a73e8;
+    color: white;
+    text-decoration: none;
+    font-size: 8px;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(26, 115, 232, 0.3);
+}
+
+.btn-neon:hover {
+    background-color: #1765cc;
+    transform: translateY(-3px); /* Sube un poco al poner el mouse */
+    box-shadow: 0 8px 15px rgba(26, 115, 232, 0.4);
+}
+
+.btn-neon:active {
+    transform: translateY(2px) scale(0.98); /* Efecto de botón físico presionado al hacer clic */
+    box-shadow: 0 2px 4px rgba(26, 115, 232, 0.2);
+}
+
+/* =========================================
+   TABLAS (BASE DE DATOS)
+   ========================================= */
+.db-table-container {
+    overflow-x: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Volumen a la tabla */
+    background-color: #ffffff;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8px;
+}
+
+th {
+    background-color: #1a73e8; /* Títulos en azul en vez de negro */
+    color: white;
+    padding: 18px 15px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f3f4;
+    transition: background-color 0.3s;
+}
+
+tr {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01); /* La fila de la tabla salta un poquito al verla */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 10;
+}
+
+/* =========================================
+   FORMULARIOS (PÁGINA DE CONTACTO)
+   ========================================= */
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #dadce0;
+    border-radius: 8px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(26, 115, 232, 0.1); /* Efecto glow o resplandor azul al escribir */
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 40px;
+    margin-top: 40px;
+    font-size: 7px;
+    color: #70757a;
+    background-color: #ffffff;
+    border-top: 1px solid #dadce0;
+}
+
+/* Ajuste Responsivo para Móviles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .logo-text { font-size: 10px; }
+}
